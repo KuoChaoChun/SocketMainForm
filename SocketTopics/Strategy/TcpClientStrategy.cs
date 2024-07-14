@@ -22,9 +22,15 @@ namespace SocketTopics.Strategy
             _tcpClient = tcpClient;
         }
 
-        public void ConformInfo(string ip, string port, string fileName, string savePath)
+        public void ConformInfo(string ip, int port, string fileName, string savePath)
         {
-
+            List<string> noSentInfoList = new List<string>();
+            if (ip == string.Empty)
+                noSentInfoList.Add("IP");
+            if (fileName == string.Empty)
+                noSentInfoList.Add("FileName");
+            if (savePath == string.Empty)
+                noSentInfoList.Add("SavePath");
         }
 
         public void Connect(string ip, int port)
